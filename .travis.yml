@@ -10,11 +10,13 @@ before_install:
 env:
   global:
     - skip_ruby_from_ppa=true
-matrix:
+
+env:
   - UBUNTU_VERSION=18.04
   - UBUNTU_VERSION=16.04
   - UBUNTU_VERSION=14.04
 
+env:
   - SWIFT_VERSION=4.2
   - SWIFT_VERSION=4.1
   - SWIFT_VERSION=4.0.3
