@@ -10,14 +10,14 @@ before_install:
 env:
   global:
     - skip_ruby_from_ppa=true
-  matrix:
-    - UBUNTU_VERSION=18.04
-    - UBUNTU_VERSION=16.04
-    - UBUNTU_VERSION=14.04
+matrix:
+  - UBUNTU_VERSION=18.04
+  - UBUNTU_VERSION=16.04
+  - UBUNTU_VERSION=14.04
 
-    - SWIFT_VERSION=4.2
-    - SWIFT_VERSION=4.1
-    - SWIFT_VERSION=4.0.3
+  - SWIFT_VERSION=4.2
+  - SWIFT_VERSION=4.1
+  - SWIFT_VERSION=4.0.3
 
 script:
   - docker image build -t swift-nio:$UBUNTU_VERSION.$SWIFT_VERSION --build-arg=ubuntu_version=$UBUNTU_VERSION --build-arg=swift_version=$SWIFT_VERSION .
